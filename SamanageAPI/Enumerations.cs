@@ -25,4 +25,13 @@ namespace SamanageAPI
         Number,
         Id
     }
+
+    public enum Priority
+    {
+        None = 1,
+        Low,
+        Medium,
+        High,
+        Critical
+    }
 }

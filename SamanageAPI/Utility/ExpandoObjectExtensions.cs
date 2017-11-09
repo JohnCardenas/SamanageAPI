@@ -60,6 +60,11 @@ namespace SamanageAPI.Utility
                 Guid g = new Guid((string)exp[key]);
                 return (T)Convert.ChangeType(g, t);
             }
+            // Special handling for enumerations
+            else if (t.IsEnum)
+            {
+                return (T)Enum.Parse(t, exp[key].ToString());
+            }
             // If we have a nullable type we need to handle it differently
             else if (u != null)
             {

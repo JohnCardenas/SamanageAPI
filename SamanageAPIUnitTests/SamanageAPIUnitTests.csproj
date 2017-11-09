@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3DF40574-4BB4-4754-BBB4-D1368F4E77C4}</ProjectGuid>
+    <ProjectGuid>{18C140DE-9990-4F20-87D6-9B0F4E79CE1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SamanageAPITests</RootNamespace>
-    <AssemblyName>SamanageAPITests</AssemblyName>
+    <RootNamespace>SamanageAPIUnitTests</RootNamespace>
+    <AssemblyName>SamanageAPIUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,6 +51,10 @@
       <HintPath>..\packages\Moq.4.7.145\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Xml" />
@@ -69,20 +73,24 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTests\IncidentTests.cs" />
+    <Compile Include="CategoryTests.cs" />
+    <Compile Include="SiteTests.cs" />
+    <Compile Include="RoleTests.cs" />
+    <Compile Include="DepartmentTests.cs" />
+    <Compile Include="TestData.cs" />
+    <Compile Include="UnitTestHelpers.cs" />
+    <Compile Include="UserTests.cs" />
+    <Compile Include="IncidentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IntegrationTests\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SamanageAPI\SamanageAPI.csproj">
       <Project>{927c253a-66f2-4c2f-82b2-abd5819cb7f9}</Project>
       <Name>SamanageAPI</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

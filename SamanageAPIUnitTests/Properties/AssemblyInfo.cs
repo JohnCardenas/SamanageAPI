@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SamanageAPITests")]
+[assembly: AssemblyTitle("SamanageAPIUnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SamanageAPITests")]
+[assembly: AssemblyProduct("SamanageAPIUnitTests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3df40574-4bb4-4754-bbb4-d1368f4e77c4")]
+[assembly: Guid("18c140de-9990-4f20-87d6-9b0f4e79ce1b")]
 
 // Version information for an assembly consists of the following four values:
 //
