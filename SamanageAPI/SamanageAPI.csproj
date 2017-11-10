@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonConverters\PrincipalConverter.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="Principal.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="SamanageObject.cs" />

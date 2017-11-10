@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using SamanageAPI.JsonConverters;
 
 namespace SamanageAPI
 {
@@ -13,7 +14,7 @@ namespace SamanageAPI
     public sealed class Incident : SamanageObject
     {
         #region Fields
-        private User _assignee;
+        private Principal _assignee;
         private Category _category;
         private DateTime? _created;
         private User _creator;
@@ -30,12 +31,13 @@ namespace SamanageAPI
         #endregion // Fields
 
         #region Properties
-        /*[JsonProperty("assignee")]
-        public User Assignee
+        [JsonProperty("assignee")]
+        [JsonConverter(typeof(PrincipalConverter))]
+        public Principal Assignee
         {
             get { return _assignee; }
             set { SetProperty(ref _assignee, value); }
-        }*/
+        }
 
         [JsonProperty("category")]
         public Category Category

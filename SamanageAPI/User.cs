@@ -10,17 +10,14 @@ using Newtonsoft.Json;
 namespace SamanageAPI
 {
     [JsonObject]
-    public class User : SamanageObject
+    public class User : Principal
     {
         #region Fields
         private DateTime? _created;
         private Department _department;
-        private bool _disabled;
-        private string _email;
         private DateTime? _lastLogin;
         private User _manager;
         private string _mobilePhone;
-        private string _name;
         private string _phone;
         private Role _role;
         private Site _site;
@@ -42,20 +39,12 @@ namespace SamanageAPI
             set { SetProperty(ref _department, value); }
         }
 
-        [JsonProperty("disabled")]
-        public bool Disabled
-        {
-            get { return _disabled; }
-            set { SetProperty(ref _disabled, value); }
-        }
-
         [Required]
         [JsonRequired]
-        [JsonProperty("email")]
-        public string Email
+        public override string Email
         {
-            get { return _email; }
-            set { SetProperty(ref _email, value); }
+            get { return base.Email; }
+            set { base.Email = value; }
         }
 
         [JsonProperty("last_login")]
@@ -77,15 +66,6 @@ namespace SamanageAPI
         {
             get { return _mobilePhone; }
             set { SetProperty(ref _mobilePhone, value); }
-        }
-
-        [Required]
-        [JsonRequired]
-        [JsonProperty("name")]
-        public string Name
-        {
-            get { return _name; }
-            set { SetProperty(ref _name, value); }
         }
 
         [JsonProperty("phone")]

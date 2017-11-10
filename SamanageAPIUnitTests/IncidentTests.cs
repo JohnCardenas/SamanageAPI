@@ -28,7 +28,7 @@ namespace SamanageAPIUnitTests
 
             // Assert
             inc.Should().NotBeNull();
-            //inc.Assignee.Should().NotBeNull();
+            inc.Assignee.Should().NotBeNull();
             inc.Category.Should().NotBeNull();
             inc.Created.Should().Be(UnitTestHelpers.NullableDateTimeConvert(TestData.Incident["created_at"]));
             //inc.Creator.Should().NotBeNull();

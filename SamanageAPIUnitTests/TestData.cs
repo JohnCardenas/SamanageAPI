@@ -8,27 +8,6 @@ namespace SamanageAPIUnitTests
 {
     public static class TestData
     {
-        #region Assignee
-        public static readonly Dictionary<string, object> Assignee = new Dictionary<string, object>
-        {
-            { "id",          2889544                               },
-            { "name",        "Financial Applications"              },
-            { "description", "The Financial Applications group"    },
-            { "email",       null                                  },
-            { "disabled",    false                                 },
-            { "is_user",     false                                 },
-            { "user_id",     null                                  },
-            {
-                "avatar", new Dictionary<string, object>
-                {
-                    { "type",  "group"  },
-                    { "color", "#2eabcf"}
-                }
-            },
-            { "memberships", new List<Dictionary<string,object>>() }
-        };
-        #endregion // Assignee
-
         #region Category
         public static readonly Dictionary<string, object> Category = new Dictionary<string, object>
         {
@@ -71,6 +50,27 @@ namespace SamanageAPIUnitTests
             { "default_assignee_id", 287641       }
         };
         #endregion // Department
+
+        #region Group
+        public static readonly Dictionary<string, object> Group = new Dictionary<string, object>
+        {
+            { "id",          2889544                               },
+            { "name",        "Financial Applications"              },
+            { "description", "The Financial Applications group."   },
+            { "email",       null                                  },
+            { "disabled",    false                                 },
+            { "is_user",     false                                 },
+            { "user_id",     null                                  },
+            {
+                "avatar", new Dictionary<string, object>
+                {
+                    { "type",  "group"   },
+                    { "color", "#bb5bac" }
+                }
+            },
+            { "memberships", new List<Dictionary<string,object>>() }
+        };
+        #endregion // Group
 
         #region Role
         public static readonly Dictionary<string, object> Role = new Dictionary<string, object>
@@ -216,7 +216,7 @@ namespace SamanageAPIUnitTests
             { "priority",              "Medium"                                                      },
             { "category",              Category                                                      },
             { "subcategory",           (Category["children"] as List<Dictionary<string, object>>)[0] },
-            { "assignee",              Assignee                                                      },
+            { "assignee",              Group                                                         },
             { "requester",             StubUser                                                      },
             { "created_at",            "2017-10-18T17:35:22.000-07:00"                               },
             { "updated_at",            "2017-10-22T02:20:38.000-07:00"                               },

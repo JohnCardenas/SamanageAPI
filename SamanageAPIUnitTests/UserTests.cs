@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SamanageAPI;
+using SamanageAPI.JsonConverters;
 using FluentAssertions;
 using Newtonsoft.Json;
 
@@ -13,6 +14,25 @@ namespace SamanageAPIUnitTests
         [TestInitialize]
         public void Initialize()
         {
+        }
+
+        [TestMethod]
+        [TestCategory("Deserialization")]
+        [Description("Tests deserialization of a User as a Principal")]
+        public void PrincipalUserDeserializeTest()
+        {
+            // Arrange
+            string json = JsonConvert.SerializeObject(TestData.User);
+            Principal principal;
+
+            // Act
+            JsonConverter[] converters = { new PrincipalConverter() };
+            principal = JsonConvert.DeserializeObject<Principal>(json, new JsonSerializerSettings() { Converters = converters });
+
+            // Assert
+            principal.Should().NotBeNull();
+            principal.Should().BeOfType<User>();
+            principal.As<User>().Phone.Should().Be((string)TestData.User["phone"]); // Test for data that is unique to a User
         }
 
         [TestMethod]
