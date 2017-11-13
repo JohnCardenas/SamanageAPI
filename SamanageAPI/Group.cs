@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace SamanageAPI
 {
     [JsonObject]
-    public class Group : Principal
+    public sealed class Group : Principal
     {
         #region Fields
         private string _description;

@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 namespace SamanageAPI
 {
     [JsonObject]
-    public class User : Principal
+    public sealed class User : Principal
     {
         #region Fields
         private DateTime? _created;

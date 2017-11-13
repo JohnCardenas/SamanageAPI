@@ -10,7 +10,7 @@ using SamanageAPI.JsonConverters;
 namespace SamanageAPI
 {
     [JsonObject]
-    public class UserStub : Principal
+    public sealed class UserStub : Principal
     {
         #region Fields
         #endregion // Fields

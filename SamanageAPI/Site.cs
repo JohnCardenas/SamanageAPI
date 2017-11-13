@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 namespace SamanageAPI
 {
     [JsonObject]
-    public class Site : SamanageObject
+    public sealed class Site : SamanageObject
     {
         #region Fields
         private string _name;

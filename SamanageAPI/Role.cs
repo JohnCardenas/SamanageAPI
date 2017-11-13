@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace SamanageAPI
 {
-    public class Role : SamanageObject
+    public sealed class Role : SamanageObject
     {
         #region Fields
         private string _name;
