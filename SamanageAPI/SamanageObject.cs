@@ -20,7 +20,7 @@ namespace SamanageAPI
         /// <summary>
         /// Data layer for modifications to this object
         /// </summary>
-        public int Id { get; private set; }
+        public virtual int Id { get; protected set; }
 
         /// <summary>
         /// Reference to a SamanageClient, used for commits and other operations.

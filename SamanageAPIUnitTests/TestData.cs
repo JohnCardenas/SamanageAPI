@@ -102,8 +102,8 @@ namespace SamanageAPIUnitTests
         };
         #endregion // Site
 
-        #region StubUser
-        public static readonly Dictionary<string, object> StubUser = new Dictionary<string, object>
+        #region UserStub
+        public static readonly Dictionary<string, object> UserStub = new Dictionary<string, object>
         {
             { "id",                                2601810                         },
             { "account_id",                        54573                           },
@@ -122,7 +122,7 @@ namespace SamanageAPIUnitTests
                 }
             }
         };
-        #endregion // StubUser
+        #endregion // UserStub
 
         #region Custom Fields
         public static readonly List<object> CustomFields = new List<object>();
@@ -217,7 +217,7 @@ namespace SamanageAPIUnitTests
             { "category",              Category                                                      },
             { "subcategory",           (Category["children"] as List<Dictionary<string, object>>)[0] },
             { "assignee",              Group                                                         },
-            { "requester",             StubUser                                                      },
+            { "requester",             UserStub                                                      },
             { "created_at",            "2017-10-18T17:35:22.000-07:00"                               },
             { "updated_at",            "2017-10-22T02:20:38.000-07:00"                               },
             { "due_at",                null                                                          },
@@ -225,7 +225,7 @@ namespace SamanageAPIUnitTests
             { "number_of_comments",    0                                                             },
             { "user_saw_all_comments", true                                                          },
             { "is_service_request",    true                                                          },
-            { "created_by",            StubUser                                                      },
+            { "created_by",            UserStub                                                      },
             { "custom",                null                                                          },
             { "href",                  "https://path/to/incident"                                    },
             { "site",                  Site                                                          },

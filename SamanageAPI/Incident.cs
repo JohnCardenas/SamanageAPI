@@ -17,14 +17,14 @@ namespace SamanageAPI
         private Principal _assignee;
         private Category _category;
         private DateTime? _created;
-        private User _creator;
+        private UserStub _creator;
         private Department _department;
         private string _description;
         private DateTime? _due;
         private string _name;
         private int _number;
         private Priority _priority;
-        private User _requester;
+        private UserStub _requester;
         private Site _site;
         private string _state;
         private DateTime? _updated;
@@ -53,12 +53,12 @@ namespace SamanageAPI
             internal set { SetProperty(ref _created, value); }
         }
 
-        /*[JsonProperty("created_by")]
-        public User Creator
+        [JsonProperty("created_by")]
+        public UserStub Creator
         {
             get { return _creator; }
             internal set { SetProperty(ref _creator, value); }
-        }*/
+        }
 
         [JsonProperty("department")]
         public Department Department
@@ -103,12 +103,12 @@ namespace SamanageAPI
             set { SetProperty(ref _priority, value); }
         }
 
-        /*[JsonProperty("requester")]
-        public User Requester
+        [JsonProperty("requester")]
+        public UserStub Requester
         {
             get { return _requester; }
             set { SetProperty(ref _requester, value); }
-        }*/
+        }
 
         [JsonProperty("site")]
         public Site Site

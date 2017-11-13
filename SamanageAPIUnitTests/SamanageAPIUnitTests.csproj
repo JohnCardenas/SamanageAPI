@@ -80,6 +80,7 @@
     <Compile Include="DepartmentTests.cs" />
     <Compile Include="TestData.cs" />
     <Compile Include="UnitTestHelpers.cs" />
+    <Compile Include="UserStubTests.cs" />
     <Compile Include="UserTests.cs" />
     <Compile Include="IncidentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
