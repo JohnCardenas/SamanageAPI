@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SamanageAPI
 {
-    public class ModelBase : INotifyPropertyChanging, INotifyPropertyChanged, INotifyDataErrorInfo
+    public abstract class ModelBase : INotifyPropertyChanging, INotifyPropertyChanged, INotifyDataErrorInfo
     {
         #region Fields
         private ConcurrentDictionary<string, List<string>> _errors = new ConcurrentDictionary<string, List<string>>();
