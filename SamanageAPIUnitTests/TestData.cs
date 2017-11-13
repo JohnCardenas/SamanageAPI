@@ -204,6 +204,22 @@ namespace SamanageAPIUnitTests
         };
         #endregion // User
 
+        #region SlaViolations
+        public static readonly List<Dictionary<string, object>> SlaViolations = new List<Dictionary<string, object>>
+        {
+            new Dictionary<string, object>
+            {
+                {"id",         1871037                      },
+                {"name",       "Not resolved within 3 days" },
+                {"sla_id",     33148                        },
+                {"sla_type",   "not_resolved"               },
+                {"resolved",   false                        },
+                {"time_delay", 3                            },
+                {"time_units", "days"                       }
+            }
+        };
+        #endregion // SlaViolations
+
         #region Incident
         public static readonly Dictionary<string, object> Incident = new Dictionary<string, object>
         {
@@ -221,7 +237,7 @@ namespace SamanageAPIUnitTests
             { "created_at",            "2017-10-18T17:35:22.000-07:00"                               },
             { "updated_at",            "2017-10-22T02:20:38.000-07:00"                               },
             { "due_at",                null                                                          },
-            { "sla_violations",        new List<Dictionary<string,object>>()                         },
+            { "sla_violations",        SlaViolations                                                 },
             { "number_of_comments",    0                                                             },
             { "user_saw_all_comments", true                                                          },
             { "is_service_request",    true                                                          },
