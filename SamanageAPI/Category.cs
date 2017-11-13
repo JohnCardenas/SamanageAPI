@@ -10,20 +10,25 @@ namespace SamanageAPI
     [JsonObject]
     public sealed class Category : SamanageObject
     {
+        #region Constants
+        internal const string JSON_NAME     = "name";
+        internal const string JSON_CHILDREN = "children";
+        #endregion // Constants
+
         #region Fields
         private string _name;
         private List<Category> _children = new List<Category>();
         #endregion // Fields
 
         #region Properties
-        [JsonProperty("name")]
+        [JsonProperty(JSON_NAME)]
         public string Name
         {
             get { return _name; }
             set { SetProperty(ref _name, value); }
         }
 
-        [JsonProperty("children")]
+        [JsonProperty(JSON_CHILDREN)]
         public List<Category> Children
         {
             get { return _children; }

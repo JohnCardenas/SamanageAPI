@@ -9,20 +9,25 @@ namespace SamanageAPI
 {
     public sealed class Role : SamanageObject
     {
+        #region Constants
+        internal const string JSON_DESCRIPTION = "description";
+        internal const string JSON_NAME        = "name";
+        #endregion // Constants
+
         #region Fields
         private string _name;
         private string _description;
         #endregion // Fields
 
         #region Properties
-        [JsonProperty("description")]
+        [JsonProperty(JSON_DESCRIPTION)]
         public string Description
         {
             get { return _description; }
             set { SetProperty(ref _description, value); }
         }
 
-        [JsonProperty("name")]
+        [JsonProperty(JSON_NAME)]
         public string Name
         {
             get { return _name; }

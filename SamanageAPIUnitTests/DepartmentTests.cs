@@ -32,9 +32,9 @@ namespace SamanageAPIUnitTests
 
             // Assert
             dept.Should().NotBeNull();
-            dept.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Department["description"]));
-            dept.Id.Should().Be((int)TestData.Department["id"]);
-            dept.Name.Should().Be(TestData.Department["name"].ToString());
+            dept.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Department[Department.JSON_DESCRIPTION]));
+            dept.Id.Should().Be((int)TestData.Department[SamanageObject.JSON_ID]);
+            dept.Name.Should().Be(TestData.Department[Department.JSON_NAME].ToString());
         }
     }
 }

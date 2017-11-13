@@ -12,6 +12,18 @@ namespace SamanageAPI
     [JsonObject]
     public sealed class User : Principal
     {
+        #region Constants
+        internal const string JSON_CREATED      = "created_at";
+        internal const string JSON_DEPARTMENT   = "department";
+        internal const string JSON_LAST_LOGIN   = "last_login";
+        internal const string JSON_MANAGER      = "reports_to";
+        internal const string JSON_MOBILE_PHONE = "mobile_phone";
+        internal const string JSON_PHONE        = "phone";
+        internal const string JSON_ROLE         = "role";
+        internal const string JSON_SITE         = "site";
+        internal const string JSON_TITLE        = "title";
+        #endregion // Constants
+
         #region Fields
         private DateTime? _created;
         private Department _department;
@@ -25,14 +37,14 @@ namespace SamanageAPI
         #endregion // Fields
 
         #region Properties
-        [JsonProperty("created_at")]
+        [JsonProperty(JSON_CREATED)]
         public DateTime? Created
         {
             get { return _created; }
             internal set { SetProperty(ref _created, value); }
         }
 
-        [JsonProperty("department")]
+        [JsonProperty(JSON_DEPARTMENT)]
         public Department Department
         {
             get { return _department; }
@@ -47,49 +59,49 @@ namespace SamanageAPI
             set { base.Email = value; }
         }
 
-        [JsonProperty("last_login")]
+        [JsonProperty(JSON_LAST_LOGIN)]
         public DateTime? LastLogin
         {
             get { return _lastLogin; }
             internal set { SetProperty(ref _lastLogin, value); }
         }
 
-        [JsonProperty("reports_to")]
+        [JsonProperty(JSON_MANAGER)]
         public User Manager
         {
             get { return _manager; }
             set { SetProperty(ref _manager, value); }
         }
 
-        [JsonProperty("mobile_phone")]
+        [JsonProperty(JSON_MOBILE_PHONE)]
         public string MobilePhone
         {
             get { return _mobilePhone; }
             set { SetProperty(ref _mobilePhone, value); }
         }
 
-        [JsonProperty("phone")]
+        [JsonProperty(JSON_PHONE)]
         public string Phone
         {
             get { return _phone; }
             set { SetProperty(ref _phone, value); }
         }
 
-        [JsonProperty("role")]
+        [JsonProperty(JSON_ROLE)]
         public Role Role
         {
             get { return _role; }
             internal set { SetProperty(ref _role, value); }
         }
 
-        [JsonProperty("site")]
+        [JsonProperty(JSON_SITE)]
         public Site Site
         {
             get { return _site; }
             set { SetProperty(ref _site, value); }
         }
 
-        [JsonProperty("title")]
+        [JsonProperty(JSON_TITLE)]
         public string Title
         {
             get { return _title; }

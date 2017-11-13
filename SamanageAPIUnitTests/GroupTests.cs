@@ -35,7 +35,7 @@ namespace SamanageAPIUnitTests
             // Assert
             principal.Should().NotBeNull();
             principal.Should().BeOfType<Group>();
-            principal.As<Group>().Description.Should().Be((string)TestData.Group["description"]); // Test property unique to a Group
+            principal.As<Group>().Description.Should().Be((string)TestData.Group[Group.JSON_DESCRIPTION]); // Test property unique to a Group
         }
 
         [TestMethod]
@@ -52,9 +52,9 @@ namespace SamanageAPIUnitTests
 
             // Assert
             group.Should().NotBeNull();
-            group.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Group["description"]));
-            group.Id.Should().Be((int)TestData.Group["id"]);
-            group.Name.Should().Be(TestData.Group["name"].ToString());
+            group.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Group[Group.JSON_DESCRIPTION]));
+            group.Id.Should().Be((int)TestData.Group[SamanageObject.JSON_ID]);
+            group.Name.Should().Be(TestData.Group[Principal.JSON_NAME].ToString());
         }
     }
 }

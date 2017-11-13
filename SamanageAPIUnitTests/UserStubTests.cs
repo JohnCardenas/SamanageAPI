@@ -30,10 +30,10 @@ namespace SamanageAPIUnitTests
 
             // Assert
             stub.Should().NotBeNull();
-            stub.Disabled.Should().Be((bool)TestData.UserStub["disabled"]);
-            stub.Email.Should().Be((string)TestData.UserStub["email"]);
-            stub.Id.Should().Be((int)TestData.UserStub["user_id"]);
-            stub.Name.Should().Be((string)TestData.UserStub["name"]);
+            stub.Disabled.Should().Be((bool)TestData.UserStub[Principal.JSON_DISABLED]);
+            stub.Email.Should().Be((string)TestData.UserStub[Principal.JSON_EMAIL]);
+            stub.Id.Should().Be((int)TestData.UserStub[UserStub.JSON_USER_ID]);
+            stub.Name.Should().Be((string)TestData.UserStub[Principal.JSON_NAME]);
         }
     }
 }

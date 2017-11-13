@@ -12,6 +12,12 @@ namespace SamanageAPI
     [JsonObject]
     public abstract class Principal : SamanageObject
     {
+        #region Constants
+        internal const string JSON_NAME     = "name";
+        internal const string JSON_EMAIL    = "email";
+        internal const string JSON_DISABLED = "disabled";
+        #endregion // Constants
+
         #region Fields
         protected string _name;
         protected string _email;
@@ -21,21 +27,21 @@ namespace SamanageAPI
         #region Properties
         [Required]
         [JsonRequired]
-        [JsonProperty("name")]
+        [JsonProperty(JSON_NAME)]
         public string Name
         {
             get { return _name; }
             set { SetProperty(ref _name, value); }
         }
 
-        [JsonProperty("email")]
+        [JsonProperty(JSON_EMAIL)]
         public virtual string Email
         {
             get { return _email; }
             set { SetProperty(ref _email, value); }
         }
 
-        [JsonProperty("disabled")]
+        [JsonProperty(JSON_DISABLED)]
         public bool Disabled
         {
             get { return _disabled; }

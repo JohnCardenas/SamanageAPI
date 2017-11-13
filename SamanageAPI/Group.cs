@@ -10,12 +10,16 @@ namespace SamanageAPI
     [JsonObject]
     public sealed class Group : Principal
     {
+        #region Constants
+        internal const string JSON_DESCRIPTION = "description";
+        #endregion // Constants
+
         #region Fields
         private string _description;
         #endregion // Fields
 
         #region Properties
-        [JsonProperty("description")]
+        [JsonProperty(JSON_DESCRIPTION)]
         public string Description
         {
             get { return _description; }

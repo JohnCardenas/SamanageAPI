@@ -11,6 +11,12 @@ namespace SamanageAPI
     [JsonObject]
     public sealed class Site : SamanageObject
     {
+        #region Constants
+        internal const string JSON_DESCRIPTION = "description";
+        internal const string JSON_LOCATION    = "location";
+        internal const string JSON_NAME        = "name";
+        #endregion // Constants
+
         #region Fields
         private string _name;
         private string _location;
@@ -18,21 +24,21 @@ namespace SamanageAPI
         #endregion // Fields
 
         #region Properties
-        [JsonProperty("description")]
+        [JsonProperty(JSON_DESCRIPTION)]
         public string Description
         {
             get { return _description; }
             set { SetProperty(ref _description, value); }
         }
 
-        [JsonProperty("location")]
+        [JsonProperty(JSON_LOCATION)]
         public string Location
         {
             get { return _location; }
             set { SetProperty(ref _location, value); }
         }
 
-        [JsonProperty("name")]
+        [JsonProperty(JSON_NAME)]
         public string Name
         {
             get { return _name; }

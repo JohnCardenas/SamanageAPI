@@ -32,9 +32,9 @@ namespace SamanageAPIUnitTests
 
             // Assert
             cat.Should().NotBeNull();
-            cat.Id.Should().Be((int)TestData.Category["id"]);
-            cat.Name.Should().Be(TestData.Category["name"].ToString());
-            cat.Children.Should().HaveCount((TestData.Category["children"] as List<Dictionary<string, object>>).Count);
+            cat.Id.Should().Be((int)TestData.Category[SamanageObject.JSON_ID]);
+            cat.Name.Should().Be(TestData.Category[Category.JSON_NAME].ToString());
+            cat.Children.Should().HaveCount((TestData.Category[Category.JSON_CHILDREN] as List<Dictionary<string, object>>).Count);
         }
     }
 }

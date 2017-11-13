@@ -12,6 +12,10 @@ namespace SamanageAPI
     [JsonObject]
     public sealed class UserStub : Principal
     {
+        #region Constants
+        internal const string JSON_USER_ID = "user_id";
+        #endregion // Constants
+
         #region Fields
         #endregion // Fields
 
@@ -22,7 +26,7 @@ namespace SamanageAPI
             protected set { base.Id = value; }
         }
 
-        [JsonProperty("user_id")]
+        [JsonProperty(JSON_USER_ID)]
         internal int UserId
         {
             get; set;

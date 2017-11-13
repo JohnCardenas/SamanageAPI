@@ -11,12 +11,16 @@ namespace SamanageAPI
 {
     public abstract class SamanageObject : ModelBase
     {
+        #region Constants
+        internal const string JSON_ID = "id";
+        #endregion // Constants
+
         #region Fields
         private SamanageClient _client;
         #endregion // Fields
 
         #region Properties
-        [JsonProperty("id")]
+        [JsonProperty(JSON_ID)]
         /// <summary>
         /// Data layer for modifications to this object
         /// </summary>

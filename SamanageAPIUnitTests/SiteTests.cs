@@ -32,9 +32,9 @@ namespace SamanageAPIUnitTests
 
             // Assert
             site.Should().NotBeNull();
-            site.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Site["description"]));
-            site.Id.Should().Be((int)TestData.Site["id"]);
-            site.Name.Should().Be(TestData.Site["name"].ToString());
+            site.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Site[Site.JSON_DESCRIPTION]));
+            site.Id.Should().Be((int)TestData.Site[SamanageObject.JSON_ID]);
+            site.Name.Should().Be(TestData.Site[Site.JSON_NAME].ToString());
         }
     }
 }

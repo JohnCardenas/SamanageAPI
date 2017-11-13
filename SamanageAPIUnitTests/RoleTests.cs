@@ -32,9 +32,9 @@ namespace SamanageAPIUnitTests
 
             // Assert
             role.Should().NotBeNull();
-            role.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Role["description"]));
-            role.Id.Should().Be((int)TestData.Role["id"]);
-            role.Name.Should().Be(TestData.Role["name"].ToString());
+            role.Description.Should().Be(UnitTestHelpers.NullableString(TestData.Role[Role.JSON_DESCRIPTION]));
+            role.Id.Should().Be((int)TestData.Role[SamanageObject.JSON_ID]);
+            role.Name.Should().Be(TestData.Role[Role.JSON_NAME].ToString());
         }
     }
 }
