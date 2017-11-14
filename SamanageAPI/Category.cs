@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace SamanageAPI
         #endregion // Fields
 
         #region Properties
+        [Required]
+        [JsonRequired]
         [JsonProperty(JSON_NAME)]
         public string Name
         {
