@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonAttributes\JsonNeverSerializeAttribute.cs" />
-    <Compile Include="JsonContractResolvers\BaseContractResolver.cs" />
     <Compile Include="JsonContractResolvers\SamanageContractResolver.cs" />
     <Compile Include="JsonConverters\PrincipalConverter.cs" />
     <Compile Include="Group.cs" />
