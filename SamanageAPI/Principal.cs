@@ -26,6 +26,7 @@ namespace SamanageAPI
 
         #region Properties
         [Required]
+        [JsonRequired]
         [JsonProperty(JSON_NAME)]
         public string Name
         {

@@ -103,13 +103,13 @@ namespace SamanageAPIUnitTests
             outcome.Keys.Should().NotContain(User.JSON_LAST_LOGIN);
             outcome.Keys.Should().NotContain(User.JSON_MANAGER);
             outcome.Keys.Should().NotContain(User.JSON_MOBILE_PHONE);
-            outcome.Keys.Should().NotContain(User.JSON_NAME);
             outcome.Keys.Should().NotContain(User.JSON_PHONE);
             outcome.Keys.Should().NotContain(User.JSON_ROLE);
             outcome.Keys.Should().NotContain(User.JSON_SITE);
             outcome.Keys.Should().NotContain(User.JSON_TITLE);
 
             outcome[User.JSON_EMAIL].Should().Be(ReferenceObject.Email);
+            outcome[User.JSON_NAME].Should().Be(ReferenceObject.Name);
             Convert.ToInt32(outcome[SamanageObject.JSON_ID]).Should().Be(ReferenceObject.Id);
         }
 
