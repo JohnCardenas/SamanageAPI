@@ -23,7 +23,6 @@ namespace SamanageAPI
         #endregion // Fields
 
         #region Properties
-        [JsonRequired]
         [JsonProperty(JSON_ID)]
         /// <summary>
         /// ID of this object

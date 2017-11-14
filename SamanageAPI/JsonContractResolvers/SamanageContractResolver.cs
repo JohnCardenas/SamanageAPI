@@ -18,6 +18,16 @@ namespace SamanageAPI.JsonContractResolvers
 
             if (property != null)
             {
+                // Check for and handle a new object (Id = 0)
+                if (property.PropertyName == SamanageObject.JSON_ID)
+                {
+                    property.ShouldSerialize = instance =>
+                    {
+                        SamanageObject obj = (SamanageObject)instance;
+                        return (obj.Id != 0);
+                    };
+                }
+
                 // Check for and handle the JsonNeverSerialize attribute
                 var neverSerializeAttribute = property.AttributeProvider.GetAttributes(typeof(JsonNeverSerializeAttribute), true);
                 if (neverSerializeAttribute != null && neverSerializeAttribute.Count > 0)
