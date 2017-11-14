@@ -63,6 +63,7 @@ namespace SamanageAPIUnitTests
             outcome.Keys.Should().NotContain(Category.JSON_CHILDREN);
 
             outcome[Category.JSON_NAME].Should().Be(ReferenceObject.Name);
+            Convert.ToInt32(outcome[Category.JSON_ID]).Should().Be(ReferenceObject.Id);
         }
 
         [TestMethod]
