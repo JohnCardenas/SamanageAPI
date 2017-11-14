@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
 using System.Text;
@@ -107,6 +108,8 @@ namespace SamanageAPI
             internal set { SetProperty(ref _isServiceRequest, value); }
         }
 
+        [Required]
+        [JsonRequired]
         [JsonProperty(JSON_NAME)]
         public string Name
         {
