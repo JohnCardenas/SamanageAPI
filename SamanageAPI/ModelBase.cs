@@ -56,7 +56,7 @@ namespace SamanageAPI
         /// <param name="value">Value to set</param>
         /// <param name="propertyName">Name of the property to set</param>
         /// <returns></returns>
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
                 return false;

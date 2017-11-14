@@ -35,10 +35,8 @@ namespace SamanageAPI
         }
         #endregion // Properties
 
-        #region Properties
-        #endregion // Properties
-
         #region Constructors
+        [JsonConstructor]
         internal Role() : base() { }
         public Role(SamanageClient client) : base(client) { }
         #endregion // Constructors

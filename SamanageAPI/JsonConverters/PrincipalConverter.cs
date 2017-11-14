@@ -38,6 +38,11 @@ namespace SamanageAPI.JsonConverters
             get { return false; }
         }
 
+        public override bool CanRead
+        {
+            get { return true; }
+        }
+
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             throw new NotImplementedException();

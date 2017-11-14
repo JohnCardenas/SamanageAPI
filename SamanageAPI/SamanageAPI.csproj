@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonAttributes\JsonNeverSerializeAttribute.cs" />
+    <Compile Include="JsonContractResolvers\BaseContractResolver.cs" />
+    <Compile Include="JsonContractResolvers\SamanageContractResolver.cs" />
     <Compile Include="JsonConverters\PrincipalConverter.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="UserStub.cs" />
@@ -69,6 +72,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

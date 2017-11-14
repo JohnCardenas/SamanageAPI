@@ -34,6 +34,7 @@ namespace SamanageAPI
         #endregion // Properties
 
         #region Constructors
+        [JsonConstructor]
         internal UserStub() : base () { }
         public UserStub(SamanageClient client) : base(client) { }
         #endregion // Constructors

@@ -47,6 +47,7 @@ namespace SamanageAPI
         #endregion // Properties
 
         #region Constructors
+        [JsonConstructor]
         internal Site() : base () { }
         public Site(SamanageClient client) : base(client) { }
         #endregion // Constructors

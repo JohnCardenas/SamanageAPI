@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using SamanageAPI.JsonAttributes;
 
 namespace SamanageAPI
 {
@@ -13,15 +15,15 @@ namespace SamanageAPI
     public sealed class User : Principal
     {
         #region Constants
-        internal const string JSON_CREATED      = "created_at";
-        internal const string JSON_DEPARTMENT   = "department";
-        internal const string JSON_LAST_LOGIN   = "last_login";
-        internal const string JSON_MANAGER      = "reports_to";
+        internal const string JSON_CREATED = "created_at";
+        internal const string JSON_DEPARTMENT = "department";
+        internal const string JSON_LAST_LOGIN = "last_login";
+        internal const string JSON_MANAGER = "reports_to";
         internal const string JSON_MOBILE_PHONE = "mobile_phone";
-        internal const string JSON_PHONE        = "phone";
-        internal const string JSON_ROLE         = "role";
-        internal const string JSON_SITE         = "site";
-        internal const string JSON_TITLE        = "title";
+        internal const string JSON_PHONE = "phone";
+        internal const string JSON_ROLE = "role";
+        internal const string JSON_SITE = "site";
+        internal const string JSON_TITLE = "title";
         #endregion // Constants
 
         #region Fields
@@ -37,6 +39,7 @@ namespace SamanageAPI
         #endregion // Fields
 
         #region Properties
+        [JsonNeverSerialize]
         [JsonProperty(JSON_CREATED)]
         public DateTime? Created
         {
@@ -59,6 +62,7 @@ namespace SamanageAPI
             set { base.Email = value; }
         }
 
+        [JsonNeverSerialize]
         [JsonProperty(JSON_LAST_LOGIN)]
         public DateTime? LastLogin
         {
@@ -87,6 +91,7 @@ namespace SamanageAPI
             set { SetProperty(ref _phone, value); }
         }
 
+        [JsonNeverSerialize]
         [JsonProperty(JSON_ROLE)]
         public Role Role
         {
@@ -110,7 +115,8 @@ namespace SamanageAPI
         #endregion // Properties
 
         #region Constructors
-        internal User() : base () { }
+        [JsonConstructor]
+        internal User() : base() { }
         public User(SamanageClient client) : base(client) { }
         #endregion // Constructors
     }

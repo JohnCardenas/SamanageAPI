@@ -159,6 +159,7 @@ namespace SamanageAPI
         #endregion // Properties
 
         #region Constructors
+        [JsonConstructor]
         internal Incident() : base() { }
         public Incident(SamanageClient client) : base(client) { }
         #endregion // Constructors

@@ -26,7 +26,6 @@ namespace SamanageAPI
 
         #region Properties
         [Required]
-        [JsonRequired]
         [JsonProperty(JSON_NAME)]
         public string Name
         {
@@ -50,6 +49,7 @@ namespace SamanageAPI
         #endregion // Properties
 
         #region Constructors
+        [JsonConstructor]
         internal Principal() : base () { }
         public Principal(SamanageClient client) : base(client) { }
         #endregion // Constructors

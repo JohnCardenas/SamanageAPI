@@ -37,6 +37,7 @@ namespace SamanageAPI
         #endregion // Properties
 
         #region Constructors
+        [JsonConstructor]
         internal Category() : base() { }
         public Category(SamanageClient client) : base(client) { }
         #endregion // Constructors
