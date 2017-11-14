@@ -26,6 +26,8 @@ namespace SamanageAPI.JsonContractResolvers
                         SamanageObject obj = (SamanageObject)instance;
                         return (obj.Id != 0);
                     };
+
+                    return property;
                 }
 
                 // Check for and handle the JsonNeverSerialize attribute
