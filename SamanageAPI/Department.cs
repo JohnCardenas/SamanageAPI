@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,8 @@ namespace SamanageAPI
             set { SetProperty(ref _description, value); }
         }
 
+        [Required]
+        [JsonRequired]
         [JsonProperty(JSON_NAME)]
         public string Name
         {
