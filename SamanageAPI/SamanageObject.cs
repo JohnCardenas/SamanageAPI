@@ -76,7 +76,7 @@ namespace SamanageAPI
         /// Creates a blank object
         /// </summary>
         [JsonConstructor]
-        internal SamanageObject()
+        internal SamanageObject() : base()
         {
             ChangedProperties = new HashSet<string>();
         }

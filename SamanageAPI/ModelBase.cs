@@ -31,6 +31,14 @@ namespace SamanageAPI
         {
             get { return _errors.Any(kv => kv.Value != null && kv.Value.Count > 0); }
         }
+
+        /// <summary>
+        /// Model validation. Returns the number of properties that have errors.
+        /// </summary>
+        public int ErrorCount
+        {
+            get { return _errors.Keys.Count(); }
+        }
         #endregion // Properties
 
         #region Getter Methods
@@ -94,7 +102,7 @@ namespace SamanageAPI
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            ValidateAsync();
+            Validate();
         }
         #endregion // Event Methods
 
@@ -149,5 +157,12 @@ namespace SamanageAPI
             }
         }
         #endregion // Validation Methods
+
+        #region Constructor
+        internal ModelBase()
+        {
+            Validate();
+        }
+        #endregion // Constructor
     }
 }

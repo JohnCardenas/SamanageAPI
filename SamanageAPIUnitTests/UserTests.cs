@@ -133,5 +133,40 @@ namespace SamanageAPIUnitTests
             var outcome = JsonConvert.DeserializeObject<Dictionary<string, object>>(outcomeJson);
             outcome[User.JSON_TITLE].Should().Be(testingString);
         }
+
+        [TestMethod]
+        [TestCategory("Validation")]
+        [Description("Tests validation for a new User object")]
+        public void UserHasErrorsTest()
+        {
+            // Arrange
+            SamanageClient client = new SamanageClient();
+            User user;
+
+            // Act
+            user = new User(client);
+
+            // Assert
+            user.HasErrors.Should().BeTrue();
+            user.ErrorCount.Should().Be(2);
+        }
+
+        [TestMethod]
+        [TestCategory("Validation")]
+        [Description("Tests that no User validation errors exist when required fields are filled out")]
+        public void UserHasNoErrorsTest()
+        {
+            // Arrange
+            SamanageClient client = new SamanageClient();
+            User user;
+
+            // Act
+            user = new User(client);
+            user.Email = "user@domain.com";
+            user.Name = "User Name";
+
+            // Assert
+            user.HasErrors.Should().BeFalse();
+        }
     }
 }
