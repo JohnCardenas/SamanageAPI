@@ -54,6 +54,7 @@
     <Compile Include="JsonContractResolvers\SamanageContractResolver.cs" />
     <Compile Include="JsonConverters\PrincipalConverter.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="UnitTesting\ISamanageClient.cs" />
     <Compile Include="UserStub.cs" />
     <Compile Include="Principal.cs" />
     <Compile Include="Category.cs" />
