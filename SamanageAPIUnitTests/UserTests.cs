@@ -117,7 +117,7 @@ namespace SamanageAPIUnitTests
         [TestMethod]
         [TestCategory("Serialization")]
         [Description("Tests serializing a single changed User property")]
-        public void UserChangeSerializationTest()
+        public void UserChangedSerializeTest()
         {
             // Arrange
             string outcomeJson;
