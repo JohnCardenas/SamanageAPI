@@ -92,12 +92,11 @@ namespace SamanageAPIUnitTests
 
             // Act
             outcomeJson = JsonConvert.SerializeObject(ReferenceObject, new JsonSerializerSettings { ContractResolver = new SamanageContractResolver() });
+            var outcome = JsonConvert.DeserializeObject<Dictionary<string, object>>(outcomeJson);
 
             // Assert
             ReferenceObject.HasChanges.Should().BeFalse();
             outcomeJson.Should().NotBeNullOrEmpty();
-
-            var outcome = JsonConvert.DeserializeObject<Dictionary<string, object>>(outcomeJson);
 
             outcome.Keys.Should().NotContain(User.JSON_CREATED);
             outcome.Keys.Should().NotContain(User.JSON_DEPARTMENT);
@@ -126,11 +125,12 @@ namespace SamanageAPIUnitTests
             // Act
             ReferenceObject.Title = testingString;
             outcomeJson = JsonConvert.SerializeObject(ReferenceObject, new JsonSerializerSettings { ContractResolver = new SamanageContractResolver() });
+            var outcome = JsonConvert.DeserializeObject<Dictionary<string, object>>(outcomeJson);
 
             // Assert
             ReferenceObject.HasChanges.Should().BeTrue();
             outcomeJson.Should().NotBeNullOrEmpty();
-            var outcome = JsonConvert.DeserializeObject<Dictionary<string, object>>(outcomeJson);
+
             outcome[User.JSON_TITLE].Should().Be(testingString);
         }
 
